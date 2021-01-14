@@ -8,8 +8,10 @@
 Bird.destroy_all
 Tree.destroy_all
 
-woodpecker = Bird.create(name: "woodpecker")
-sparrow = Bird.create(name: 'sparrow')
-eagle = Bird.create(name: "eagle")
+sequoia = Tree.create(species: "Sequioa")
+fir = Tree.create(species: "fir")
+aspen= Tree.create(species: "aspen")
 
-sequoia = Tree.create(name: "sequoia" )
+woodpecker = Bird.create(name: "woodpecker", tree: sequoia)
+sparrow = Bird.create(name: 'sparrow', tree: sequoia)
+eagle = Bird.create(name: "eagle", tree: fir)

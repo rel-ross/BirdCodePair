@@ -2,12 +2,12 @@ class BirdsController < ApplicationController
     def index 
         @birds = Bird.all 
 
-        render json: @birds
+        render json: @birds, include: :trees
     end
 
     def show 
         @bird = Bird.find(params[:id])
-        render json: @bird
+        render json: @bird, include: :trees
     end
 
     def create 

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_14_170322) do
+ActiveRecord::Schema.define(version: 2021_01_14_171624) do
 
   create_table "birds", force: :cascade do |t|
     t.string "name"
+    t.integer "tree_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tree_id"], name: "index_birds_on_tree_id"
+  end
+
+  create_table "trees", force: :cascade do |t|
+    t.string "species"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
